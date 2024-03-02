@@ -1,0 +1,268 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>GtoH FOR main home </title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- ===========================*bootstrap 5.2.3으로 업데이트*=========================== --> 
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: iPortfolio
+  * Updated: Sep 18 2023 with Bootstrap v5.3.2
+  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+  <!-- ==================================알림창추가========================= -->
+  <div class="modal fade" id="notification-modal" tabindex="-1" role="dialog" aria-labelledby="notification-modal-label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="notification-modal-label">Notification</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="notification-modal-body">
+              <div class="data-container"></div>
+            </div>
+        </div>
+    </div>
+  </div>
+  <!-- ====================================================================== -->
+  
+  <div class="top-of-top">
+    <div class="logo-container">
+      <a href="{%url 'main'%}"><img src="{% static 'assets/img/logo/logo2.png'%}" alt="GOH 로고" class="tops"></a>
+    </div>
+    <div class="right-icons">
+      <a><iconify-icon icon="fluent:alert-48-regular" style="color: white;" width="23" height="23" class="tops"></iconify-icon></a>
+      <a><i class="bi bi-list mobile-nav-toggle d-xl-none tops"></i></a>
+    </div>
+  </div>
+
+  <!-- ======= Header ======= -->
+  <header id="header">
+    <div class="d-flex flex-column">
+
+      <div class="profile">
+        <a href="{% url 'user1' %}">
+          <img src="{% static 'assets/img/profile_admin.jpg' %}" alt="" class="img-fluid rounded-circle">
+        </a>
+        <h1 class="text-light"><a href="{% url 'user1' %}">거주자1</a></h1>
+        <!-- <div class="social-links mt-3 text-center">
+          <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+          <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+          <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+          <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+          <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        </div> -->
+    </div>
+
+      <nav id="navbar" class="nav-menu navbar">
+        <ul>
+          <li><a href="{% url 'enroll' %}" class="nav-link"><i class="bx bx-home"></i> <span>추가 등록</span></a></li>
+          <li><a href="{% url 'sent_list' %}" class="nav-link"><i class="bx bx-user"></i> <span>문자 발송내역</span></a></li>
+          <li><a href="{% url 'mail' %}" class="nav-link"><i class="bx bx-envelope"></i> <span>mail</span></a></li>
+          <li><a href="{% url 'login' %}" class="nav-link"><i class="bx bx-book-content"></i> <span>로그아웃</span></a></li>
+        </ul>
+      </nav><!-- .nav-menu -->
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+    <!-- ======= Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio section-bg">
+      <div class="container">
+
+        <!-- <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100"></div> -->
+
+        <div class="row portfolio-container-1">  
+          <div class="col-lg-6 col-md-6 col-sm-6 portfolio-item">
+            <div class="portfolio"> <!--보안모드-->
+              <!-- <a href="{% url 'main' %}"> -->
+
+                <div class="security">
+                  <div id="security_text">보안중</div>
+                  <div id='security_toggle' class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked onchange="toggleSecurity()">
+                    <label class="form-check-label" for="flexSwitchCheckChecked"></label>
+                  </div>
+                </div>
+                
+              <!-- </a> -->
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-md-6 col-sm-6 portfolio-item" >
+            <div class="portfolio" id="tableau">  <!--통계-->
+              <div class = "clickable-div" data-url="https://public.tableau.com/app/profile/.21981185/viz/1_17011012513350/12?publish=yes">
+                {% for item in data %}
+                  <div>현재 살고계신</div>
+                  <div>{{ item.gu_name }}</div>
+                  <div>안전지수 {{ item.score }} 입니다.</div>
+              </div>
+              <div><img src="{% static 'emoji/' %}{{ item.emoji }}" class="img-fluid" alt="emoji"></div>
+              {% endfor %}
+            </div>
+            <script>
+               document.addEventListener('DOMContentLoaded', function() {
+                 // JavaScript로 클릭 이벤트 처리
+                 document.querySelector('.clickable-div').addEventListener('click', function() {
+                 // data-url 속성을 사용하여 실제 URL 가져오기
+                 var url = this.getAttribute('data-url');
+                 // URL로 이동
+                 window.location.href = url;
+                 });
+               });
+            </script>
+          </div>
+
+          <div class="col-lg-6 col-md-6 col-sm-6" id= "item-array" >
+            <div class="col-lg-6 col-md-6 col-sm-6 portfolio-item" id="item-array-1">
+              <div class="portfolio">  <!--실시간영상-->
+                <a href="{% url 'video' %}">
+                  <img src="{% static 'assets/img/UI/live.png' %}" class="img-fluid" alt="" style>
+                </a>
+              </div>
+            </div>
+            
+            <div class="col-lg-6 col-md-6 col-sm-6 portfolio-item" id="item-array-2">
+              <div class="portfolio">  <!-- 최근 감지 -->
+                <a href="{% url 'detect_main' %}">
+                  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                      <div class="carousel-item active" data-bs-interval="3000">
+                        <img src="{% static '' %}{{ images.0.path }}" class="d-block w-100" alt="">
+                      </div>
+                      <div class="carousel-item" data-bs-interval="3000">
+                        <img src="{% static '' %}{{ images.1.path }}" class="d-block w-100" alt="">
+                      </div>
+                      <div class="carousel-item" data-bs-interval="3000">
+                        <img src="{% static '' %}{{ images.2.path }}" class="d-block w-100" alt="">
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+                  <!-- <img src="{%static 'assets/img/stranger.png' %}" class="img-fluid" alt=""> -->
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-md-6 col-sm-6 portfolio-item">
+            <div class="portfolio" id="sos">  <!--긴급신고-->
+              <a href="{% url 'pin' %}">
+                <img src="{% static 'assets/img/UI/sos.png' %}" class="img-fluid" alt="">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-md-6 col-sm-6 portfolio-item">
+            <div class="portfolio" id="detect_list">  <!--감지이력-->
+              <a href="{% url 'history' %}">
+                <img src="{% static 'assets/img/UI/detectlist.png' %}" class="img-fluid" alt="">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>  <!--  End Portfolio Section -->
+
+    
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>iPortfolio</span></strong>
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/ -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer><!-- End  Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+<!-- 토글 -->
+
+<script>
+  function toggleSecurity() {
+    var securityText = document.getElementById('security_text');
+    var securityToggle = document.getElementById('flexSwitchCheckChecked');
+
+    if (securityToggle.checked) {
+      securityText.innerText = '보안중';
+    } else {
+      securityText.innerText = '휴식중';
+    }
+  }
+</script>
+
+
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/vendor/purecounter/purecounter_vanilla.js' %}"></script>
+  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/typed.js/typed.umd.js' %}"></script>
+  <script src="{% static 'assets/vendor/waypoints/noframework.waypoints.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+  <!-- 아이콘 무료 -->
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  <!-- Template Main JS File -->
+  <script src="{% static 'assets/js/main.js' %}"></script>
+
+
+  <!-- ====================================================================== -->
+  <!-- Include jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <!-- 알림창 js  -->
+  <script src="{% static 'assets/js/alarm.js' %}"></script>
+
+</body>
+</html>

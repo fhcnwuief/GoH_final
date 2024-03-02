@@ -1,0 +1,6 @@
+python_venv/
+
+*.txt.DS_Store
+static/.DS_Store
+static/assets/.DS_Store
+static/assets/DB_img/.DS_Store
